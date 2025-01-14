@@ -33,8 +33,12 @@ namespace EasyBullet
 
         public override void Act()
         {
+            int numFlies = 0;
             List<Actor> flies = GetActors(typeof(Fly));
-            int numFlies = flies.Count;
+            if (flies != null)
+            {
+                numFlies = flies.Count;
+            }
             score = START_FLY_COUNT - numFlies;
             ShowText("Score: " + score, 100, 100);
         }
